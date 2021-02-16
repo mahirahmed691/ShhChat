@@ -17,7 +17,9 @@ export default StyleSheet.create({
   wrapperStyle: {
     height:'100%',
     width: '100%',
-    backgroundColor:'white',
+    backgroundColor:'#6200EE',
+    justifyContent:'center',
+    alignItems:'center',
   },
   titleStyle: {
     textAlign: 'center',
@@ -30,12 +32,13 @@ export default StyleSheet.create({
   },
   subTitleStyle: {
     textAlign: 'center',
-    color: '#AAA',
+    color: '#fff',
     width: '100%',
+    fontFamily:'Futura',
     paddingTop: 0,
     paddingBottom: 16 * heightRatio,
     paddingHorizontal: 10,
-    fontSize: 12 * heightRatio,
+    fontSize: 13 * heightRatio,
   },
   helpTextStyle: {
     fontSize: 12 * heightRatio,
@@ -219,5 +222,20 @@ export default StyleSheet.create({
     borderWidth: 0.5,
     borderRadius: 4,
     backgroundColor: "#fff"
-   }
+   },
+   loginBtn: {
+    backgroundColor: 'black',
+    borderRadius: 10,
+    color: 'white',
+    paddingTop: 12 * heightRatio,
+    paddingBottom: 12 * heightRatio,
+    paddingLeft: 50 * widthRatio,
+    paddingRight: 50 * widthRatio,
+  },
+  btnText: {
+    color: 'white',
+    textAlign: "center",
+    fontWeight: '500',
+    fontSize: 12 * heightRatio,
+  },
 });

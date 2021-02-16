@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable comma-dangle */
 import {StyleSheet, Dimensions} from 'react-native';
 
 const dheight = Dimensions.get('window').height;
@@ -16,12 +18,16 @@ export default StyleSheet.create({
   wrapperStyle: {
     alignItems: 'center',
     justifyContent: 'center',
+    height:'100%',
+    backgroundColor:'#0366FF'
   },
   errorStyle: {
     fontSize: 12 * heightRatio,
-    color: 'red',
+    color: 'yellow',
     width: '100%',
     textAlign: 'center',
+    marginTop:30,
+    padding: 30,
   },
   loaderContainer: {
     height: Dimensions.get('window').height,
@@ -34,19 +40,21 @@ export default StyleSheet.create({
     justifyContent: 'center',
   },
   titleStyle: {
-    fontSize: 32 * heightRatio,
-    color: '#2da7ff',
+    fontSize: 50 * heightRatio,
+    color: 'yellow',
     width: '100%',
     textAlign: 'center',
-    fontWeight: '500',
-    //borderColor:"white",
-    paddingBottom: 16 * heightRatio,
+    fontWeight: 'bold',
+    borderColor:'black',
+    fontFamily:'Futura'
   },
   subtitleStyle: {
     width: '100%',
     fontSize: 12 * heightRatio,
     textAlign: 'center',
     marginTop: 8 * heightRatio,
+    fontFamily:'Futura',
+    color: '#fff'
   },
   userContainerStyle: {
     width: '100%',
@@ -63,7 +71,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: '#333',
+    backgroundColor: '#111',
     borderRadius: 10,
     color: 'white',
     paddingTop: 6 * heightRatio,
@@ -72,8 +80,8 @@ export default StyleSheet.create({
     paddingBottom: 6 * heightRatio,
   },
   thumbnailWrapperStyle: {
-    width: 34 * widthRatio,
-    height: 34 * heightRatio,
+    width: 24 * widthRatio,
+    height: 24 * heightRatio,
     justifyContent: 'center',
   },
   uidWrapperStyle: {
@@ -86,7 +94,6 @@ export default StyleSheet.create({
     paddingBottom: 10 * heightRatio,
     paddingLeft: 20 * widthRatio,
     paddingRight: 20 * widthRatio,
-
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -100,17 +107,17 @@ export default StyleSheet.create({
     paddingLeft: 10 * widthRatio,
     paddingRight: 10 * widthRatio,
     borderRadius: 5,
-    borderWidth: 1,
-    borderColor: '#bbb',
+    borderColor: 'black',
+    backgroundColor:'white'
   },
   loginBtn: {
-    backgroundColor: '#333',
+    backgroundColor: 'black',
     borderRadius: 10,
     color: 'white',
-    paddingTop: 8 * heightRatio,
-    paddingBottom: 8 * heightRatio,
-    paddingLeft: 22 * widthRatio,
-    paddingRight: 22 * widthRatio,
+    paddingTop: 12 * heightRatio,
+    paddingBottom: 12 * heightRatio,
+    paddingLeft: 50 * widthRatio,
+    paddingRight: 50 * widthRatio,
   },
   btnText: {
     color: 'white',

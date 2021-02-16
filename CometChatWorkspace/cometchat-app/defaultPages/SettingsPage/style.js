@@ -165,7 +165,7 @@ export default StyleSheet.create({
     height:'100%',
     width:'100%',
     padding:50,
-    backgroundColor: "#0366FF",
+    backgroundColor: "teal",
     borderRadius: 20, 
     shadowColor: "#000",
     shadowOffset: {
@@ -205,9 +205,11 @@ export default StyleSheet.create({
     borderRadius:5,
   },
   textStyle: {
-    color: "white",
-    fontWeight: "bold",
-    textAlign: "center"
+    color: "whitesmoke",
+    textAlign: "center",
+    fontFamily:'Futura',
+    justifyContent:'center',
+    alignItems:'center',
   },
   modalText: {
     marginBottom: 15,
@@ -219,5 +221,11 @@ export default StyleSheet.create({
     borderWidth: 0.5,
     borderRadius: 4,
     backgroundColor: "#fff"
+   },
+   card:{
+    width: dwidth / 2,
+    height: dheight / 4 - 25,
+    backgroundColor:'#0366FF',
+    margin:1,
    }
 });

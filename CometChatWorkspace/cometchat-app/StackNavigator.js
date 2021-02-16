@@ -5,6 +5,9 @@ import {connect} from 'react-redux';
 
 import LoginPage from './defaultPages/LoginPage';
 import HomePage from './defaultPages/HomePage';
+import SettingPage from '/Users/mahirahmed/react-native-chat-app/CometChatWorkspace/cometchat-app/defaultPages/SettingsPage';
+import SignUpPage from '/Users/mahirahmed/react-native-chat-app/CometChatWorkspace/cometchat-app/defaultPages/SignupPage';
+import MapPage from '/Users/mahirahmed/react-native-chat-app/CometChatWorkspace/cometchat-app/react-native-chat-ui-kit/src/components/MapPage';
 import {
   CometChatUserProfile,
   CometChatUI,
@@ -15,6 +18,7 @@ import {
   CometChatGroupList,
   CometChatConversationListWithMessages,
   CometChatConversationList,
+  
 } from './react-native-chat-ui-kit';
 
 function StackNavigator(props) {
@@ -41,6 +45,9 @@ function StackNavigator(props) {
         <Stack.Screen name="Users" component={CometChatUserListWithMessages} />
         <Stack.Screen name="UsersComponent" component={CometChatUserList} />
         <Stack.Screen name="CometChatMessages" component={CometChatMessages} />
+        <Stack.Screen name="MapPage" component={MapPage}/>
+        <Stack.Screen name="SignupPage" component={SignUpPage} />
+        <Stack.Screen name="SettingsPage" component={SettingPage} />
       </Stack.Navigator>
     </NavigationContainer>
   );

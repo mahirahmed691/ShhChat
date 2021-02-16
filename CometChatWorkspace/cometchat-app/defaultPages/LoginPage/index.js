@@ -1,3 +1,5 @@
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable no-unused-vars */
 import React from 'react';
 //import { Global } from "@emotion/core";
 
@@ -8,16 +10,11 @@ import {COMETCHAT_CONSTANTS} from '../../CONSTS';
 
 import style from './style';
 
-//import { loaderStyle } from "./loader";
+import {loaderStyle} from './loader';
 
 import * as actions from '../../store/action';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 import {ActivityIndicator} from 'react-native';
 
 class LoginPage extends React.PureComponent {
@@ -62,84 +59,16 @@ class LoginPage extends React.PureComponent {
       );
     }
 
-    //let authRedirect = null;
+    let authRedirect = null;
 
     return (
-      <SafeAreaView>
+      <SafeAreaView style={{backgroundColor:'#0366FF'}}>
         {loader}
         <View style={style.wrapperStyle}>
-          {errorMessage}
-          <Text style={style.titleStyle}>CometChat App</Text>
-          <Text style={style.subtitleStyle}>
-            Login with one of our sample users
+          <Text style={style.titleStyle}>Shh</Text>
+          <Text style={{color: '#fff', fontWeight: 'bold', marginBottom: 50}}>
+            Events, Expertise.
           </Text>
-          <View style={style.userContainerStyle}>
-            <TouchableOpacity
-              style={style.userWrapperStyle}
-              onPress={() => this.login('superhero1')}>
-              <View style={style.thumbnailWrapperStyle}>
-                <CometChatAvatar
-                  image={{
-                    uri:
-                      'https://data-us.cometchat.io/assets/images/avatars/ironman.png',
-                  }}
-                />
-              </View>
-              <Text style={style.btnText}>superhero1</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={style.userWrapperStyle}
-              onPress={() => this.login('superhero2')}>
-              <View style={style.thumbnailWrapperStyle}>
-                <CometChatAvatar
-                  image={{
-                    uri:
-                      'https://data-us.cometchat.io/assets/images/avatars/captainamerica.png',
-                  }}
-                />
-              </View>
-              <Text style={style.btnText}>superhero2</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={style.userWrapperStyle}
-              onPress={() => this.login('superhero3')}>
-              <View style={style.thumbnailWrapperStyle}>
-                <CometChatAvatar
-                  image={{
-                    uri:
-                      'https://data-us.cometchat.io/assets/images/avatars/spiderman.png',
-                  }}
-                />
-              </View>
-              <Text style={style.btnText}>superhero3</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={style.userWrapperStyle}
-              onPress={() => this.login('superhero4')}>
-              <View style={style.thumbnailWrapperStyle}>
-                <CometChatAvatar
-                  image={{
-                    uri:
-                      'https://data-us.cometchat.io/assets/images/avatars/wolverine.png',
-                  }}
-                />
-              </View>
-              <Text style={style.btnText}>superhero4</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={style.userWrapperStyle}
-              onPress={() => this.login('superhero5')}>
-              <View style={style.thumbnailWrapperStyle}>
-                <CometChatAvatar
-                  image={{
-                    uri:
-                      'https://data-us.cometchat.io/assets/images/avatars/cyclops.png',
-                  }}
-                />
-              </View>
-              <Text style={style.btnText}>superhero5</Text>
-            </TouchableOpacity>
-          </View>
           <View style={style.uidWrapperStyle}>
             <View>
               <Text style={style.subtitleStyle}> Login with UID</Text>
@@ -147,7 +76,6 @@ class LoginPage extends React.PureComponent {
             <View style={style.inputWrapperStyle}>
               <TextInput
                 style={style.textInput}
-                // ref={this.myRef}
                 onChangeText={(value) => {
                   this.setState({uid: value});
                 }}
@@ -160,6 +88,10 @@ class LoginPage extends React.PureComponent {
               <Text style={style.btnText}>Login</Text>
             </TouchableOpacity>
           </View>
+          {errorMessage}
+          <TouchableOpacity onPress={()=> this.props.navigation.navigate('SignupPage')}>
+            <Text style={style.subtitleStyle}>Not a user yet? Create an account.</Text>
+          </TouchableOpacity>
         </View>
       </SafeAreaView>
     );
@@ -174,10 +106,11 @@ const mapStateToProps = ({reducer}) => {
   };
 };
 
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     onLogin: ( uid, authKey ) => dispatch( actions.auth( uid, authKey ) )
-//   };
-// };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onLogin: (uid, authKey) => dispatch(actions.auth(uid, authKey)),
+  };
+};
+
 
 export default connect(mapStateToProps)(LoginPage);
